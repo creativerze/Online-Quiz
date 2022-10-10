@@ -1,0 +1,7 @@
+.bg-image {
+  background-image: url("/public/header-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+}
