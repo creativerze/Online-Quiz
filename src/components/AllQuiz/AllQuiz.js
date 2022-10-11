@@ -4,6 +4,7 @@ import Quiz from '../Quiz/Quiz';
 
 const AllQuiz = () => {
   const allQuiz = useLoaderData();
+  // console.log(allQuiz);
   const quiz = allQuiz.data.questions;
   // console.log(quiz);
   return (

@@ -12,13 +12,13 @@ const SingleQuizTopic = ({ singleQuizTopic }) => {
   return (
     <div className='col-md-6 col-lg-3 ms-auto'>
       <Card>
-        <Card.Img variant="top" src={logo} />
+        <Card.Img className='bg-dark' variant="top" src={logo} />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>
             <p>Total Question: {total}</p>
           </Card.Text>
-          <Link to='/quiz'><Button onClick={handleQuiz} variant="primary">Go to Quiz</Button></Link>
+          <Link to={`/home/${id}`}><Button onClick={handleQuiz} variant="primary">Go to Quiz</Button></Link>
         </Card.Body>
       </Card>
     </div >
