@@ -6,8 +6,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const QuizAns = ({ option, singleQuiz }) => {
   const { id, options, correctAnswer } = singleQuiz;
-  console.log(singleQuiz);
-  // console.log(options);
   const handleRigntAns = () => {
     if (option === correctAnswer) {
       toast.success('Right Answer', {

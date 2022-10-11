@@ -3,7 +3,6 @@ import { Button, Card, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const SingleQuizTopic = ({ singleQuizTopic }) => {
-  // console.log(singleQuizTopic);
   const { id, name, logo, total } = singleQuizTopic;
 
   const handleQuiz = () => {
