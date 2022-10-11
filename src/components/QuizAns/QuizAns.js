@@ -1,25 +1,47 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const QuizAns = ({ option, singleQuiz }) => {
   const { options, correctAnswer } = singleQuiz;
   // console.log(singleQuiz);
   // console.log(options);
   const handleRigntAns = () => {
-    if (option.length === correctAnswer.length) {
-      console.log(correctAnswer);
+    if (option === correctAnswer) {
+      toast.success('Right Answer', {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     }
     else {
-      console.log('rong ans');
+      toast.error('Wrong Answer', {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     }
   };
   return (
-    <div>
+    <div className='border'>
       <button onClick={handleRigntAns} className='border-0'>
         <Form.Group className="mb-3" controlId="formBasicRadio">
-          <Form.Check className='px-4 py-2' type="radio" name='one' label={option} />
+          <Form.Check className='px-4 py-2' id="two" type="radio" name='one' label={option} />
         </Form.Group>
       </button>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };
