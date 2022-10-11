@@ -5,8 +5,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const QuizAns = ({ option, singleQuiz }) => {
-  const { options, correctAnswer } = singleQuiz;
-  // console.log(singleQuiz);
+  const { id, options, correctAnswer } = singleQuiz;
+  console.log(singleQuiz);
   // console.log(options);
   const handleRigntAns = () => {
     if (option === correctAnswer) {
@@ -38,7 +38,7 @@ const QuizAns = ({ option, singleQuiz }) => {
     <div className='border'>
       <button onClick={handleRigntAns} className='border-0'>
         <Form.Group className="mb-3" controlId="formBasicRadio">
-          <Form.Check className='px-4 py-2' id="two" type="radio" name='one' label={option} />
+          <Form.Check className='px-4 py-2' type="radio" id={option} name='one' label={option} />
         </Form.Group>
       </button>
       <ToastContainer></ToastContainer>
