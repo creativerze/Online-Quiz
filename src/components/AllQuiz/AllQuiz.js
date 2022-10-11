@@ -8,7 +8,7 @@ const AllQuiz = () => {
   // console.log(quiz);
   return (
     <div>
-      <h2>All Quiz section</h2>
+      <h2 className='text-center my-5'>Quiz</h2>
       {
         quiz.map(singleQuiz => <Quiz
           key={singleQuiz.id}

@@ -1,25 +1,29 @@
 import React from 'react';
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card, Form } from 'react-bootstrap';
+import QuizAns from '../QuizAns/QuizAns';
 
 const Quiz = ({ singleQuiz }) => {
-  console.log(singleQuiz);
   const { question, options } = singleQuiz;
+  // console.log(options);
   return (
-    <div className='container my-5'>
-      <Card>
-        <Card.Body>
-          <Card.Title>{question}</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
-          <Button className='m-2' variant="primary">A. {options[0]}</Button>
-          <Button className='m-2' variant="primary">B. {options[1]}</Button>
-          <br />
-          <Button className='m-2' variant="primary">C. {options[2]}</Button>
-          <Button className='m-2' variant="primary">D. {options[3]}</Button>
-        </Card.Body>
-      </Card>
+    <div className='container my-5 border rounded'>
+      <h4 className='my-3'>{question}</h4>
+
+      {
+        options.map(option => <QuizAns option={option}
+          singleQuiz={singleQuiz}></QuizAns>)
+
+      }
+
+      {/* <h4 className='my-3'>{question}</h4>
+      <Form.Group className="mb-3" controlId="formBasicRadio">
+
+
+        <Form.Check className='px-4 py-2' type="radio" name='one' label={options[0]} />
+        <Form.Check className='px-4 py-2' type="radio" name='one' label={options[1]} />
+        <Form.Check className='px-4 py-2' type="radio" name='one' label={options[2]} />
+        <Form.Check className='px-4 py-2' type="radio" name='one' label={options[3]} />
+      </Form.Group> */}
     </div>
   );
 };

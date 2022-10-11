@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 
 const SingleQuizTopic = ({ singleQuizTopic }) => {
   // console.log(singleQuizTopic);
-  const { id, name, logo } = singleQuizTopic;
+  const { id, name, logo, total } = singleQuizTopic;
 
   const handleQuiz = () => {
-    console.log(singleQuizTopic);
+    // console.log(singleQuizTopic);
   };
   return (
     <div className='col-md-6 col-lg-3 ms-auto'>
@@ -16,10 +16,9 @@ const SingleQuizTopic = ({ singleQuizTopic }) => {
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            <p>Total Question: {total}</p>
           </Card.Text>
-          <Link to='/quiz'><Button onClick={handleQuiz} variant="primary">Go somewhere</Button></Link>
+          <Link to='/quiz'><Button onClick={handleQuiz} variant="primary">Go to Quiz</Button></Link>
         </Card.Body>
       </Card>
     </div >
